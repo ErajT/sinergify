@@ -1152,28 +1152,28 @@ export default function SynergifyWebsite() {
                           <PhoneIcon sx={{ mr: 2, mt: 0.5, opacity: 0.8 }} />
                           <Box>
                             <Typography fontWeight={500}>Phone</Typography>
-                            <Typography sx={{ opacity: 0.8 }}>+123-456-7890</Typography>
+                            <Typography sx={{ opacity: 0.8 }}>+92-333-2162006=</Typography>
                           </Box>
                         </Box>
                         <Box sx={{ display: "flex", alignItems: "flex-start" }}>
                           <MailIcon sx={{ mr: 2, mt: 0.5, opacity: 0.8 }} />
                           <Box>
                             <Typography fontWeight={500}>Email</Typography>
-                            <Typography sx={{ opacity: 0.8 }}>hello@Synergify.com</Typography>
+                            <Typography sx={{ opacity: 0.8 }}>erajtanweer2@gmail.com</Typography>
                           </Box>
                         </Box>
                         <Box sx={{ display: "flex", alignItems: "flex-start" }}>
                           <GlobeIcon sx={{ mr: 2, mt: 0.5, opacity: 0.8 }} />
                           <Box>
                             <Typography fontWeight={500}>Website</Typography>
-                            <Typography sx={{ opacity: 0.8 }}>www.Synergify.com</Typography>
+                            <Typography sx={{ opacity: 0.8 }}>www.TheSynergify.com</Typography>
                           </Box>
                         </Box>
                         <Box sx={{ display: "flex", alignItems: "flex-start" }}>
                           <TwitterIcon sx={{ mr: 2, mt: 0.5, opacity: 0.8 }} />
                           <Box>
                             <Typography fontWeight={500}>Twitter</Typography>
-                            <Typography sx={{ opacity: 0.8 }}>@Synergify</Typography>
+                            <Typography sx={{ opacity: 0.8 }}>@The Synergify</Typography>
                           </Box>
                         </Box>
                       </Box>
@@ -1277,7 +1277,7 @@ export default function SynergifyWebsite() {
                     <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}>
                       <BrainIcon sx={{ fontSize: 32, color: "white" }} />
                       <Typography variant="h5" fontWeight="bold">
-                        Synergify
+                        The Synergify
                       </Typography>
                     </Box>
                     <Typography sx={{ opacity: 0.8, mb: 3, lineHeight: 1.6 }}>
@@ -1348,35 +1348,13 @@ export default function SynergifyWebsite() {
                   </motion.div>
                 </Grid>
 
-                <Grid item xs={12} md={6} lg={2}>
-                  <motion.div variants={fadeIn}>
-                    <Typography variant="h6" fontWeight="bold" mb={2}>
-                      Support
-                    </Typography>
-                    <List disablePadding>
-                      {[
-                        "Documentation",
-                        "Help Center",
-                        "Contact Support",
-                        "Privacy Policy",
-                        "Terms of Service",
-                        "Cookie Policy"
-                      ].map((item) => (
-                        <ListItem key={item} disablePadding>
-                          <Typography sx={{ opacity: 0.8, "&:hover": { opacity: 1 }, cursor: "pointer" }}>
-                            {item}
-                          </Typography>
-                        </ListItem>
-                      ))}
-                    </List>
-                  </motion.div>
-                </Grid>
+               
               </Grid>
 
               <motion.div variants={fadeIn}>
                 <Divider sx={{ bgcolor: alpha("#ffffff", 0.2), mb: 3 }} />
                 <Typography align="center" sx={{ opacity: 0.6 }}>
-                  © {new Date().getFullYear()} Synergify by Wardiere Inc. All rights reserved. | Powered by AI Innovation
+                  © {new Date().getFullYear()} The Synergify All rights reserved. | Powered by AI Innovation
                 </Typography>
               </motion.div>
             </motion.div>
