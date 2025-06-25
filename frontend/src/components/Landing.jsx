@@ -368,9 +368,8 @@ export default function SynergifyWebsite() {
   ];
 
   const stats = [
-    { number: "500+", label: "AI Solutions Deployed" },
-    { number: "100+", label: "Happy Clients" },
-    { number: "50+", label: "Countries Served" },
+    { number: "3+", label: "AI Solutions Deployed" },
+    { number: "2+", label: "Happy Clients" },
     { number: "99%", label: "Client Satisfaction" }
   ];
 
