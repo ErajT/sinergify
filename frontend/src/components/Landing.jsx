@@ -483,12 +483,15 @@ export default function SynergifyWebsite() {
           <Container>
             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", py: 2 }}>
               <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                <img src="\logo.png" alt="" width="15%" />
+                <img src="\logo.png" alt="" width="8%" />
+                <Typography variant="h5" fontWeight="bold" mb={2} color="white">
+                  The Synergify
+                </Typography>
                 
               </Box>
 
               {/* Desktop Navigation */}
-              <Box sx={{ display: { xs: "none", md: "flex" }, gap: 4 }}>
+              <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1 }}>
                 {navLinks.map((link) => (
                   <Button
                     key={link.name}
@@ -649,21 +652,6 @@ export default function SynergifyWebsite() {
               </Typography>
             </motion.div>
 
-            <motion.div variants={fadeIn}>
-              <Typography
-                variant="h6"
-                align="center"
-                mb={6}
-                sx={{
-                  maxWidth: "600px",
-                  opacity: 0.8,
-                  lineHeight: 1.6,
-                }}
-              >
-                Bridging the gap between intelligence and efficiency through cutting-edge AI solutions
-              </Typography>
-            </motion.div>
-
             <motion.div
               variants={fadeIn}
               whileHover={{ scale: 1.05 }}
@@ -728,7 +716,6 @@ export default function SynergifyWebsite() {
               style={{ maxWidth: 1400, margin: "0 auto" }}
             >
               <motion.div variants={fadeIn} style={{ textAlign: "center", marginBottom: 64 }}>
-               
                 <Typography
                   variant="h2"
                   fontWeight="bold"
@@ -737,74 +724,35 @@ export default function SynergifyWebsite() {
                 >
                   About <GradientTypography component="span" variant="h2" sx={{ fontSize: { xs: "2.5rem", md: "3.5rem" } }}>Synergify</GradientTypography>
                 </Typography>
-                <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 800, mx: "auto", lineHeight: 1.7 }}>
-                  Synergify is a cutting-edge technology company specializing in the development and deployment of AI-powered solutions for modern enterprises. We bridge the gap between intelligence and efficiency by creating smart, scalable, and customizable software.
-                </Typography>
               </motion.div>
-
-              <Grid container spacing={4}>
-                {aboutCards.map((card, index) => (
-                  <Grid item xs={12} md={6} lg={4} key={index}>
-                    <motion.div variants={scaleUp} whileHover={{ y: -10, transition: { duration: 0.3 } }}>
-                      <Card
-                        elevation={4}
-                        sx={{
-                          height: "100%",
-                          transition: "all 0.3s",
-                          "&:hover": { boxShadow: 8 },
-                          overflow: "hidden",
-                          position: "relative",
-                        }}
-                      >
-                        <Box
-                          sx={{
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            width: "100%",
-                            height: 4,
-                            background: `linear-gradient(to right, ${customTheme.palette.primary.main}, ${alpha(
-                              customTheme.palette.primary.main,
-                              0.5,
-                            )})`,
-                          }}
-                        />
-                        <CardContent sx={{ p: 4, pt: 5 }}>
-                          <Box sx={{ mb: 3 }}>
-                            {card.icon}
-                          </Box>
-                          <Typography
-                            variant="h5"
-                            fontWeight="bold"
-                            mb={2}
-                            sx={{
-                              transition: "color 0.3s",
-                              "&:hover": { color: "primary.main" },
-                            }}
-                          >
-                            {card.title}
-                          </Typography>
-                          <Typography color="text.secondary" mb={3} sx={{ lineHeight: 1.6 }}>
-                            {card.content}
-                          </Typography>
-                          <Button
-                            color="primary"
-                            sx={{
-                              p: 0,
-                              fontWeight: 500,
-                              "&:hover .arrow": { transform: "translateX(4px)" },
-                            }}
-                            onClick={() => openModal(card.title, card.extendedContent)}
-                            endIcon={<ArrowRightIcon className="arrow" sx={{ transition: "transform 0.3s" }} />}
-                          >
-                            Learn More
-                          </Button>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  </Grid>
-                ))}
+              <Grid container spacing={4} alignItems="center">
+                <Grid item xs={12} md={6}>
+                  <motion.div variants={fadeIn}>
+                    <Box component="ul" sx={{ pl: 3, fontSize: { xs: "1.1rem", md: "1.25rem" }, color: "text.secondary", lineHeight: 1.7 }}>
+                      <li><strong>Innovation First:</strong> Cutting-edge AI solutions that push the boundaries of what's possible.</li>
+                      <li><strong>Precision Focus:</strong> Targeted solutions that address specific business challenges with accuracy.</li>
+                      <li><strong>Human-Centric Design:</strong> Technology designed to enhance human capabilities, not replace them.</li>
+                    </Box>
+                  </motion.div>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <motion.div variants={scaleUp} style={{ display: "flex", justifyContent: "center" }}>
+                    <Box
+                      component="img"
+                      src="/about-us.jpg"
+                      alt="Synergify Team"
+                      sx={{
+                        width: { xs: "100%", md: "90%" },
+                        maxHeight: 350,
+                        borderRadius: 4,
+                        boxShadow: 6,
+                        objectFit: "cover",
+                      }}
+                    />
+                  </motion.div>
+                </Grid>
               </Grid>
+
             </motion.div>
           </Container>
         </Box>
@@ -820,54 +768,48 @@ export default function SynergifyWebsite() {
           }}
         >
           <Container>
-            <motion.div initial="hidden" animate={servicesInView ? "visible" : "hidden"} variants={staggerContainer}>
-              <motion.div variants={fadeIn} sx={{ textAlign: "center", mb: 8 }}>
-              
-            
+            <motion.div
+              initial="hidden"
+              animate={servicesInView ? "visible" : "hidden"}
+              variants={staggerContainer}
+            >
+              <motion.div variants={fadeIn} style={{ textAlign: "center", marginBottom: 48 }}>
                 <Typography
                   variant="h2"
                   fontWeight="bold"
                   mb={3}
-                  sx={{ fontSize: { xs: "2.5rem", md: "3.5rem" } }}
-                  color="white"
+                  sx={{ fontSize: { xs: "2.5rem", md: "3.5rem" }, color: 'white' }}
                 >
                   Our Services
                 </Typography>
-                <Typography variant="h6" color="white" sx={{ maxWidth: 800, mx: "auto" }}>
-                  Comprehensive AI solutions tailored to transform your business operations
-                </Typography>
               </motion.div>
-
               <Grid container spacing={4}>
-                {services.map((service, index) => (
-                  <Grid item xs={12} md={6} lg={4} key={index}>
-                    <motion.div
-                      variants={scaleUp}
-                      whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                      style={{ height: "100%" }}
-                    >
-                      <Card
-                        elevation={2}
-                        sx={{
-                          height: "100%",
-                          transition: "all 0.3s",
-                          "&:hover": { boxShadow: 6 },
-                          border: "1px solid rgba(43, 103, 119, 0.1)",
-                        }}
-                      >
-                        <CardContent sx={{ p: 4 }}>
-                          <Box sx={{ mb: 3 }}>
-                            {service.icon}
-                          </Box>
-                          <Typography variant="h6" fontWeight="bold" mb={2}>
-                            {service.title}
-                          </Typography>
-                          <Typography color="text.secondary" sx={{ lineHeight: 1.6 }}>
-                            {service.description}
-                          </Typography>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
+                {[{
+                  title: 'Machine Learning (ML)',
+                  desc: 'Advanced algorithms that learn and adapt to optimize your business processes automatically.'
+                }, {
+                  title: 'Mobile Applications',
+                  desc: 'Transform unstructured text data into actionable insights and automate communication.'
+                }, {
+                  title: 'AI integrations',
+                  desc: 'Automate repetitive tasks and workflows to increase efficiency and reduce human error.'
+                }, {
+                  title: 'Predictive Analytics',
+                  desc: 'Forecast trends and outcomes using historical data to make informed strategic decisions.'
+                }, {
+                  title: 'Conversational AI',
+                  desc: 'Intelligent chatbots and virtual assistants that provide seamless customer experiences.'
+                }, {
+                  title: 'Web-based solutions',
+                  desc: 'Scalable cloud solutions that integrate seamlessly with your existing infrastructure.'
+                }].map((service, idx) => (
+                  <Grid item xs={12} md={4} key={service.title}>
+                    <Card elevation={4} sx={{ height: "100%", bgcolor: 'white', color: '#2b6777', borderRadius: 9 }}>
+                      <CardContent>
+                        <Typography variant="h5" fontWeight="bold" mb={2} sx={{ color: '#2b6777' }}>{service.title}</Typography>
+                        <Typography color="text.secondary">{service.desc}</Typography>
+                      </CardContent>
+                    </Card>
                   </Grid>
                 ))}
               </Grid>
@@ -895,63 +837,57 @@ export default function SynergifyWebsite() {
               position: "absolute",
               inset: 0,
               opacity: 0.1,
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundImage: `url("data:why.jpg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
               }}
           />
 
           <Container sx={{ position: "relative", zIndex: 2 }}>
             <motion.div initial="hidden" animate={whyChooseInView ? "visible" : "hidden"} variants={staggerContainer}>
-              <motion.div variants={fadeIn} sx={{ textAlign: "center", mb: 8 }}>
-                <WhiteBadge label="Why Choose Us" />
-                <Typography
-                  variant="h2"
-                  fontWeight="bold"
-                  mb={3}
-                  sx={{ fontSize: { xs: "2.5rem", md: "3.5rem" } }}
-                >
-                  Why Choose Synergify
-                </Typography>
-                <Typography variant="h6" color="white" sx={{ maxWidth: 800, mx: "auto", opacity: 0.9 }}>
-                  Experience the difference with our unique approach to AI solutions
-                </Typography>
-              </motion.div>
-
-              <Grid container spacing={4} sx={{ mb: 8 }}>
-                {whyChooseUsReasons.map((reason, index) => (
-                  <Grid item xs={12} md={6} key={index}>
-                    <motion.div
-                      variants={slideIn}
-                      whileHover={{ scale: 1.02 }}
-                      sx={{ display: "flex", alignItems: "flex-start", gap: 3 }}
-                    >
-                      <Box
-                        sx={{
-                          bgcolor: alpha("#2b6777", 0.5),
-                          p: 2,
-                          
-                          flexShrink: 0,
-                        }}
-                      >
-                        {reason.icon}
-                      </Box>
-                      <Box
+              <motion.div variants={fadeIn} sx={{ mb: 8 }}>
+                <Grid container spacing={4} alignItems="center">
+                  <Grid item xs={12} md={5}>
+                    <Box
+                      component="img"
+                      src="/why.jpg"
+                      alt="Why Choose Synergify"
                       sx={{
-                          bgcolor: alpha("#2b6777", 1),
-                          p: 2,
-                          
-                          flexShrink: 0,
-                        }}>
-                        <Typography variant="h5" fontWeight="bold" mb={2} sx = {{color: "white"}}>
-                          {reason.title}
-                        </Typography>
-                        <Typography sx={{ opacity: 0.9, lineHeight: 1.6, color:"white" }}>
-                          {reason.description}
-                        </Typography>
-                      </Box>
-                    </motion.div>
+                        width: '100%',
+                        maxWidth: 400,
+                        borderRadius: 4,
+                        boxShadow: 6,
+                        objectFit: 'cover',
+                        display: 'block',
+                        mx: { xs: 'auto', md: 0 },
+                      }}
+                    />
                   </Grid>
-                ))}
-              </Grid>
+                  <Grid item xs={12} md={7}>
+                    <Typography
+                      variant="h4"
+                      fontWeight="bold"
+                      align="center"
+                      mb={3}
+                      sx={{ color: '#2b6777' }}
+                    >
+                      Why choose Sinergify?
+                    </Typography>
+                    <Box component="ul" sx={{ color: '#2b6777', fontSize: { xs: '1.1rem', md: '1.25rem' }, lineHeight: 1.7, pl: 3 }}>
+                      <li style={{ marginBottom: 16 }}>
+                        <strong style={{ color: '#2b6777' }}>AI-Driven Innovation:</strong> Every solution is powered by advanced artificial intelligence.
+                      </li>
+                      <li style={{ marginBottom: 16 }}>
+                        <strong style={{ color: '#2b6777' }}>Industry-Neutral Solutions:</strong> Adaptable technologies that work across all industries.
+                      </li>
+                      <li style={{ marginBottom: 16 }}>
+                        <strong style={{ color: '#2b6777' }}>User-Focused Design:</strong> Tailored to meet your unique business needs.
+                      </li>
+                      <li>
+                        <strong style={{ color: '#2b6777' }}>Agile Execution:</strong> Rapid, iterative delivery for continuous improvement.
+                      </li>
+                    </Box>
+                  </Grid>
+                </Grid>
+              </motion.div>
 
               {/* Stats Section */}
               <motion.div variants={fadeIn}>
@@ -1014,96 +950,31 @@ export default function SynergifyWebsite() {
           sx={{
             py: 8,
             px: 2,
-            bgcolor: "#2b6777"
+            position: 'relative',
+            backgroundImage: 'url(/AI_innovation.jpeg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            minHeight: 400,
+            display: 'flex',
+            alignItems: 'center',
           }}
         >
           <Container>
-            <motion.div initial="hidden" animate={companyInView ? "visible" : "hidden"} variants={staggerContainer}>
-              <Grid container spacing={6} alignItems="center">
-                <Grid item xs={12} lg={6}>
-                  <motion.div variants={slideIn}>
-                  
-                    <Typography variant="h3" fontWeight="bold" mb={3} color="white">
-                      Transforming Business Through AI
-                    </Typography>
-                    <Typography sx={{ color: "white", mb: 3, lineHeight: 1.7 }}>
-                      Our name — a fusion of <strong>Synergy</strong> and <strong>Simplify</strong> — reflects our mission to harmonize technology with business needs, transforming complex operations into seamless, AI-driven workflows.
-                    </Typography>
-                    <Typography sx={{ color: "white", mb: 4, lineHeight: 1.7 }}>
-                      We empower businesses to automate processes, enhance productivity, and make data-driven decisions through intelligent AI solutions that adapt and evolve with your needs.
-                    </Typography>
-
-                    <Grid container spacing={2} sx={{ mb: 4 }}>
-                      <Grid item xs={4}>
-                        <Box sx={{ textAlign: "center", p: 2, bgcolor: "grey.50", borderRadius: 2 }}>
-                          <Typography variant="h4" fontWeight="bold" color="primary.main" mb={1}>
-                            15+
-                          </Typography>
-                          <Typography variant="caption" color="text.secondary">
-                            Years Experience
-                          </Typography>
-                        </Box>
-                      </Grid>
-                      <Grid item xs={4}>
-                        <Box sx={{ textAlign: "center", p: 2, bgcolor: "grey.50", borderRadius: 2 }}>
-                          <Typography variant="h4" fontWeight="bold" color="primary.main" mb={1}>
-                            24/7
-                          </Typography>
-                          <Typography variant="caption" color="text.secondary">
-                            Support Available
-                          </Typography>
-                        </Box>
-                      </Grid>
-                      <Grid item xs={4}>
-                        <Box sx={{ textAlign: "center", p: 2, bgcolor: "grey.50", borderRadius: 2 }}>
-                          <Typography variant="h4" fontWeight="bold" color="primary.main" mb={1}>
-                            100%
-                          </Typography>
-                          <Typography variant="caption" color="text.secondary">
-                            Satisfaction Rate
-                          </Typography>
-                        </Box>
-                      </Grid>
-                    </Grid>
-                  </motion.div>
-                </Grid>
-
-                <Grid item xs={12} lg={6}>
-                  <motion.div variants={fadeIn}>
-                    <Box
-                      sx={{
-                        position: "relative",
-                        borderRadius: 4,
-                        overflow: "hidden",
-                        boxShadow: 8,
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          width: "100%",
-                          height: 400,
-                          background: "linear-gradient(135deg, #2b6777 0%, #3a7a8a 100%)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          color: "white",
-                        }}
-                      >
-                        <Box sx={{ textAlign: "center" }}>
-                          <BrainIcon sx={{ fontSize: 80, mb: 2, opacity: 0.8 }} />
-                          <Typography variant="h4" fontWeight="bold">
-                            AI Innovation
-                          </Typography>
-                          <Typography variant="h6" sx={{ opacity: 0.8 }}>
-                            Shaping Tomorrow
-                          </Typography>
-                        </Box>
-                      </Box>
-                    </Box>
-                  </motion.div>
-                </Grid>
+            <Grid container spacing={6} alignItems="center" justifyContent="flex-end">
+              <Grid item xs={12} md={7} lg={6} sx={{ mr: 'auto' }}>
+                <Box sx={{ bgcolor: 'rgba(255,255,255,0.92)', borderRadius: 4, p: { xs: 3, md: 5 } }}>
+                  <Typography variant="h4" fontWeight="bold" mb={3} sx={{ color: '#2b6777' }}>
+                    Transforming Business Through AI
+                  </Typography>
+                  <Typography sx={{ color: '#2b6777', mb: 2, lineHeight: 1.7 }}>
+                    Our name — a fusion of <strong>Synergy</strong> and <strong>Simplify</strong> — reflects our mission to harmonize technology with business needs, transforming complex operations into seamless, AI-driven workflows.
+                  </Typography>
+                  <Typography sx={{ color: '#2b6777', lineHeight: 1.7 }}>
+                    We empower businesses to automate processes, enhance productivity, and make data-driven decisions through intelligent AI solutions that adapt and evolve with your needs.
+                  </Typography>
+                </Box>
               </Grid>
-            </motion.div>
+            </Grid>
           </Container>
         </Box>
 
@@ -1152,7 +1023,7 @@ export default function SynergifyWebsite() {
                           <PhoneIcon sx={{ mr: 2, mt: 0.5, opacity: 0.8 }} />
                           <Box>
                             <Typography fontWeight={500}>Phone</Typography>
-                            <Typography sx={{ opacity: 0.8 }}>+92-333-2162006=</Typography>
+                            <Typography sx={{ opacity: 0.8 }}>+92-333-2162006</Typography>
                           </Box>
                         </Box>
                         <Box sx={{ display: "flex", alignItems: "flex-start" }}>
@@ -1168,33 +1039,6 @@ export default function SynergifyWebsite() {
                             <Typography fontWeight={500}>Website</Typography>
                             <Typography sx={{ opacity: 0.8 }}>www.TheSynergify.com</Typography>
                           </Box>
-                        </Box>
-                        <Box sx={{ display: "flex", alignItems: "flex-start" }}>
-                          <TwitterIcon sx={{ mr: 2, mt: 0.5, opacity: 0.8 }} />
-                          <Box>
-                            <Typography fontWeight={500}>Twitter</Typography>
-                            <Typography sx={{ opacity: 0.8 }}>@The Synergify</Typography>
-                          </Box>
-                        </Box>
-                      </Box>
-
-                      <Box sx={{ mt: "auto" }}>
-                        <Typography fontWeight={500} mb={2}>
-                          Follow Us
-                        </Typography>
-                        <Box sx={{ display: "flex", gap: 2 }}>
-                          <SocialButton size="small">
-                            <FacebookIcon fontSize="small" />
-                          </SocialButton>
-                          <SocialButton size="small">
-                            <TwitterIcon fontSize="small" />
-                          </SocialButton>
-                          <SocialButton size="small">
-                            <InstagramIcon fontSize="small" />
-                          </SocialButton>
-                          <SocialButton size="small">
-                            <LinkedinIcon fontSize="small" />
-                          </SocialButton>
                         </Box>
                       </Box>
                     </Grid>
@@ -1268,14 +1112,26 @@ export default function SynergifyWebsite() {
         </Box>
 
         {/* Footer */}
-        <Box ref={footerRef} sx={{ py: 8, bgcolor: "#2b6777", color: "white" }}>
+        <Box
+          ref={footerRef}
+          sx={{
+            py: 8,
+            bgcolor: '#2b6777',
+            color: 'white',
+            position: 'relative',
+            backgroundImage: 'url(/end.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            zIndex: 1,
+          }}
+        >
           <Container>
             <motion.div initial="hidden" animate={footerInView ? "visible" : "hidden"} variants={staggerContainer}>
               <Grid container spacing={4} sx={{ mb: 6 }}>
                 <Grid item xs={12} md={6} lg={4}>
                   <motion.div variants={fadeIn}>
                     <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}>
-                      <BrainIcon sx={{ fontSize: 32, color: "white" }} />
+                      <img src="\logo.png" alt="" width="10%" />
                       <Typography variant="h5" fontWeight="bold">
                         The Synergify
                       </Typography>
@@ -1283,20 +1139,6 @@ export default function SynergifyWebsite() {
                     <Typography sx={{ opacity: 0.8, mb: 3, lineHeight: 1.6 }}>
                       Transforming businesses through intelligent AI solutions. The future of automation starts here.
                     </Typography>
-                    <Box sx={{ display: "flex", gap: 1 }}>
-                      <SocialButton size="small">
-                        <TwitterIcon fontSize="small" />
-                      </SocialButton>
-                      <SocialButton size="small">
-                        <LinkedinIcon fontSize="small" />
-                      </SocialButton>
-                      <SocialButton size="small">
-                        <FacebookIcon fontSize="small" />
-                      </SocialButton>
-                      <SocialButton size="small">
-                        <MailIcon fontSize="small" />
-                      </SocialButton>
-                    </Box>
                   </motion.div>
                 </Grid>
 
