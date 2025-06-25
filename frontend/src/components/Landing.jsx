@@ -402,18 +402,43 @@ export default function SynergifyWebsite() {
     }
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    onSubmit(formData)
+const handleSubmit = (e) => {
+  e.preventDefault()
 
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      message: "",
+  // Send form data to Formspree
+  fetch('https://formspree.io/f/mzzgkaeo', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  })
+    .then((response) => {
+      if (response.ok) {
+        console.log('Form successfully submitted')
+        // Optionally show a success message here
+      } else {
+        console.error('Form submission failed')
+        // Optionally show an error message here
+      }
     })
-    setActiveTab(0)
-  }
+    .catch((error) => {
+      console.error('Error submitting the form', error)
+      // Optionally show an error message here
+    })
+
+  // Reset form state
+  onSubmit(formData)
+  setFormData({
+    name: "",
+    email: "",
+    company: "",
+    message: "",
+  })
+  setActiveTab(0)
+}
+
 
   const openModal = (title, content) => {
     setModalContent({ title, content })
@@ -1022,7 +1047,7 @@ export default function SynergifyWebsite() {
                           <PhoneIcon sx={{ mr: 2, mt: 0.5, opacity: 0.8 }} />
                           <Box>
                             <Typography fontWeight={500}>Phone</Typography>
-                            <Typography sx={{ opacity: 0.8 }}>+92-333-2162006</Typography>
+                            <Typography sx={{ opacity: 0.8 }}>+92-333-2162005</Typography>
                           </Box>
                         </Box>
                         <Box sx={{ display: "flex", alignItems: "flex-start" }}>
