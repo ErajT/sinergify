@@ -498,7 +498,7 @@ export default function SynergifyWebsite() {
                     sx={{
                       color: "primary.contrastText",
                       fontWeight: 500,
-                      "&:hover": { color: "primary.contrastText", fontSize: "102%" },
+                      "&:hover": { color: "primary.contrastText", fontSize: "100.5%" },
                     }}
                   >
                     {link.name}
