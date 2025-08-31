@@ -19,7 +19,7 @@ jobs:
           node-version: 18
 
       - name: 🔨 Build React App
-        working-directory: ./sinergify/frontend   # 👈 point to frontend
+        working-directory: ./frontend   # 👈 just frontend now
         run: |
           npm install
           npm run build
@@ -31,6 +31,7 @@ jobs:
 
       - name: 🚀 Deploy to VPS
         run: |
+          ssh agmqykay2a98@118.139.176.89 "mkdir -p /home/agmqykay2a98/public_html"
           rsync -avz --delete \
-            sinergify/frontend/build/ \   # 👈 point to the correct build folder
+            frontend/build/ \   # 👈 correct build path
             agmqykay2a98@118.139.176.89:/home/agmqykay2a98/public_html/
