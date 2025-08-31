@@ -619,7 +619,7 @@ const handleSubmit = (e) => {
             height: "100vh",
             // width: "100%",
             overflow: "hidden",
-            backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0)), url("/landing.png")`,
+            backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0)), url("/landing.webp")`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "left top", // ✅ align image to the left
             backgroundSize: "auto 170%",    // ✅ keep full height, scale width
@@ -1054,14 +1054,14 @@ const handleSubmit = (e) => {
                           <MailIcon sx={{ mr: 2, mt: 0.5, opacity: 0.8 }} />
                           <Box>
                             <Typography fontWeight={500}>Email</Typography>
-                            <Typography sx={{ opacity: 0.8 }}>erajtanweer2@gmail.com</Typography>
+                            <Typography sx={{ opacity: 0.8 }}>erajtanweer@thesynergify.com</Typography>
                           </Box>
                         </Box>
                         <Box sx={{ display: "flex", alignItems: "flex-start" }}>
                           <GlobeIcon sx={{ mr: 2, mt: 0.5, opacity: 0.8 }} />
                           <Box>
                             <Typography fontWeight={500}>Website</Typography>
-                            <Typography sx={{ opacity: 0.8 }}>www.TheSynergify.com</Typography>
+                            <Typography sx={{ opacity: 0.8 }}>www.thesynergify.com</Typography>
                           </Box>
                         </Box>
                       </Box>
@@ -1220,7 +1220,7 @@ const handleSubmit = (e) => {
               <motion.div variants={fadeIn}>
                 <Divider sx={{ bgcolor: alpha("#ffffff", 0.2), mb: 3 }} />
                 <Typography align="center" sx={{ opacity: 0.6 }}>
-                  © {new Date().getFullYear()} The Synergify All rights reserved. | Powered by AI Innovation
+                  © {new Date().getFullYear()} The Synergify | All rights reserved. | Powered by AI Innovation
                 </Typography>
               </motion.div>
             </motion.div>
